@@ -1,4 +1,4 @@
-fitness <- function(p,f=NULL){
+fitness <- function(p,f){
   ft=f(p)
   return(ft)
 }
