@@ -4,7 +4,11 @@
 #' @param tau pheromones of the routes
 #' @param Q pheromones constant in each ant
 #' @param rho volatilization coefficient of tau
-aco <- function(nodes,swarm=100,iteration=300,Q=100,rho=0.9){
+aco <- function(nodes,
+                swarm=100,
+                iteration=300,
+                Q=100,
+                rho=0.9){
   nodes=cities
   n=nrow(nodes)
   gbest=rep(100000,iteration)
