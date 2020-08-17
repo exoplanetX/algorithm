@@ -21,15 +21,15 @@ DE <- function(d,f,swarm=200,iteration=300,
     for(i in 1:swarm){
       rnd=sample(r[-i],3)
       v[i,] <- x[rnd[1]]+ff*(x[rnd[2]]-x[rnd[3]])
+      #v <- x[rnd[1]]+ff*(x[rnd[2]]-x[rnd[3]])
       u[i,] <- x[i,]
-
-      rnum <- sample(1:d,1)
-      rndint=sample(1:d,rnum)
-      for(j in 1:rnum)if(runif(1)<Cr) u[i,rndint[j]] <- v[i,rndint[j]]
-      if(f(u[i,])<f(x[i,]))  x[i,] <- u[i,]
+      rndint=sample(1:d,sample(1:d,1))
+      for(j in 1:length(rndint))if(runif(1)<Cr) u[i,rndint[j]] <- v[i,rndint[j]]
+      if(f(u[i,])<f(x[i,])) x[i,] <- u[i,]
     }
   }
 #---return the result------
   for(i in 1:swarm)  fitness[i]=f(x[i,])
-  return(list(gbest=x[which.min(fitness),]),fitness=min(fitness))
+  return(list(gbest=x[which.min(fitness),],fitness=min(fitness)))
+
 }
