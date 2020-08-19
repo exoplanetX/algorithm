@@ -5,7 +5,7 @@
 #' @param Cr Crossover rate
 #' @param ff scaling factor
 #'
-DE <- function(d,f,swarm=200,iteration=300,
+DE <- function(d,f,swarm=200,iteration=800,
                Cr=0.5,ff=0.5,
                lower=rep(-10,d),upper=rep(10,d)
                ){
