@@ -1,8 +1,8 @@
 Package: algorithm
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Evolutionary algrithms for optimization problems
 Version: 0.1.0
-Author: Who wrote it
+Author: XU Ning
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
@@ -11,3 +11,5 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
+Imports:
+    greyincidence

@@ -20,7 +20,7 @@ DE <- function(d,f,swarm=200,iteration=800,
   for(k in 1:iteration){
     for(i in 1:swarm){
       rnd=sample(r[-i],3)
-      v[i,] <- x[rnd[1]]+ff*(x[rnd[2]]-x[rnd[3]])
+      v[i,] <- x[rnd[1]]+ff*(x[rnd[2],]-x[rnd[3],])
       #v <- x[rnd[1]]+ff*(x[rnd[2]]-x[rnd[3]])
       u[i,] <- x[i,]
       rndint=sample(1:d,sample(1:d,1))
@@ -30,6 +30,7 @@ DE <- function(d,f,swarm=200,iteration=800,
   }
 #---return the result------
   for(i in 1:swarm)  fitness[i]=f(x[i,])
+  if(d==2) plot(x,xlim = c(-10,10),ylim = c(-10,10))
   return(list(gbest=x[which.min(fitness),],fitness=min(fitness)))
 
 }
