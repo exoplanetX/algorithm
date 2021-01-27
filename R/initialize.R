@@ -1,3 +1,4 @@
+#'
 initialize <- function(d,lower,upper){
   p=rep(NA,d)
   for(i in 1:d){
