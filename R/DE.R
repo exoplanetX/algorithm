@@ -1,4 +1,4 @@
-#'
+#' @export
 #' @param d
 #' @param f
 #' @param swarm
@@ -16,7 +16,7 @@ DE <- function(d,f,swarm=20,iteration=80,
   u <- matrix(nrow = swarm,ncol = d)
 
   for(i in 1:swarm){
-    x[i,] <- initialize(d,lower,upper)
+    x[i,] <- algorithm::initialize(d,lower,upper)
   }
 
   #---searching process-----
